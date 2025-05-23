@@ -3,6 +3,8 @@ main:
     url: /about/
   - title: Projects
     url: /projects/
+  - title: Streamlit Projects
+    url: /streamlit-projects/
   - title: Extracurriculars
     url: /extracurriculars/
   - title: Volunteering
