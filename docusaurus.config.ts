@@ -20,36 +20,34 @@ const config: Config = {
   organizationName: 'ishan-karmakar', // Usually your GitHub org/user name.
   projectName: 'ishan-karmakar.github.io', // Usually your repo name.
   onBrokenLinks: 'throw',
-  presets: [['classic', {}]],
+  presets: [['classic', {
+    docs: {
+      routeBasePath: '/',
+      sidebarPath: './sidebars.js'
+    }
+  }]],
   themeConfig: {
     navbar: {
       title: 'Ishan',
       logo: {
         alt: 'My Logo',
-        src: 'img/profile.svg',
+        src: 'img/profile.svg'
       },
       items: [
-        {to: '/', label: 'Home', position: 'left'},
-        {to: '/projects', label: 'Projects', position: 'left'},
-        {to: '/robotics', label: 'Robotics', position: 'left'},
-        {to: '/volunteering', label: 'Volunteering', position: 'left'},
-        {to: '/about', label: 'About', position: 'right'},
+        {to: '/projects/pivot-os', label: 'Projects'},
+        {to: '/certs', label: "Certifications"},
+        {to: '/about', label: 'About'},
       ],
     },
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'Site',
+          title: 'Contact',
           items: [
-            {label: 'Home', to: '/'},
-            {label: 'Projects', to: '/projects'},
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
+            {label: 'Email', href: 'mailto:ishan.karmakar24@gmail.com'},
             {label: 'GitHub', href: 'https://github.com/ishan-karmakar'},
+            {label: 'LinkedIn', href: 'https://linkedin.com/in/ishan-karmakar'},
           ],
         },
       ],
