@@ -35,6 +35,7 @@ const config: Config = {
       },
       items: [
         {to: '/projects/pivot-os', label: 'Projects'},
+        {to: '/experience', label: 'Experience'},
         {to: '/certs', label: "Certifications"},
         {to: '/about', label: 'About'},
       ],
