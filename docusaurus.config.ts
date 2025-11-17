@@ -11,7 +11,7 @@ const config: Config = {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://ishan-karmakar.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -23,7 +23,7 @@ const config: Config = {
   presets: [['classic', {
     docs: {
       routeBasePath: '/',
-      sidebarPath: './sidebars.js'
+      sidebarPath: './sidebars.ts'
     }
   }]],
   themeConfig: {
@@ -35,7 +35,7 @@ const config: Config = {
       },
       items: [
         {to: '/projects/pivot-os', label: 'Projects'},
-        {to: '/experience', label: 'Experience'},
+        {to: '/experience/community-service', label: 'Experience'},
         {to: '/certs', label: "Certifications"},
         {to: '/about', label: 'About'},
       ],

@@ -1,9 +1,5 @@
----
-hide_table_of_contents: true
----
-
 # About Me
-My name is Ishan Karmakar and I am a 10th grader at Vandegrift High School. I am an aspirint network engineer, backend developer, and systems developer interested in building applications and infrastructure with hands-on programming.
+My name is Ishan Karmakar and I am a 10th grader at Vandegrift High School. I am an aspiring network engineer, backend developer, and systems developer interested in building applications and infrastructure with hands-on programming.
 
 ## Skills
 * **Programming Languages**
