@@ -1,4 +1,7 @@
-# PivotOS
+---
+title: PivotOS
+---
+# [PivotOS](https://github.com/ishan-karmakar/pivot-os)
 PivotOS is a custom 64 bit operating system built in Zig and x86 Assembly.
 
 ## Features
@@ -15,16 +18,16 @@ PivotOS is a custom 64 bit operating system built in Zig and x86 Assembly.
     * Responsible for managing the heap memory for the kernel
     * Uses Zig's standard `FixedBufferAllocator`
     * Runs in O(1) time
-* ACPI Support
-* Timer Support
-* PCI(e) Support
-* UART 16550 (Serial) Driver
-* Framebuffer Support
-* Multiprocessing
-* Multitasking
-* Virtual File System (in progress)
-* Disk Driver (in progress)
-* Network Driver (in progress)
+* **ACPI Support** - Interfaces with *uACPI* to learn about the hardware properties of the host
+* **Timer Support** - Supports the *LAPIC*, *PIT*, *HPET*, and *ACPI* timer
+* **PCI(e) Support** - Supports both PCIe and legacy PCI
+* **UART 16550 (Serial) Driver** - Uses serial port to communicate to *QEMU*
+* **Framebuffer Support** - Uses *SSFN* to draw fonts to the framebuffer
+* **Multiprocessing** - Uses Limine to start other processors and run code on them
+* **Multitasking** - Uses custom real-time scheduler to run processes
+* **Virtual File System (in progress)** - Linux inspired virtual file system to handle multiple filesystem types
+* **Disk Driver (in progress)** - Custom driver for ACHI/IDE
+* **Network Driver (in progress)** - Driver for virtio-net backed by *LWIP*
 
 ## Technologies Used
 * [**Limine**](https://github.com/limine-bootloader/limine)
@@ -45,3 +48,5 @@ PivotOS is a custom 64 bit operating system built in Zig and x86 Assembly.
 * [**Limine Zig**](https://github.com/ishan-karmakar/limine-zig)
     * Used as the API for interacting with Limine boot protocol structures
     * Written in native Zig
+
+## Revisions
