@@ -1,7 +1,6 @@
 import type {Config} from '@docusaurus/types';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
 const config: Config = {
   title: 'Ishan Karmakar',
   tagline: 'Robotics, software and community',
