@@ -6,3 +6,10 @@ Vlogger is a custom library made for FRC Valor 6800. It was made to communicate 
 
 # Comparisons
 Vlogger was inspired by [*AdvantageScope*](https://github.com/Mechanical-Advantage/AdvantageScope). The speed of WPILog parsing is similar between *AdvantageScope* and *Vlogger*, and is many times faster than the official *PyNTCore* package.
+
+# Skills and Technologies
+* Algorithms
+* Logging
+* Multiprocessing
+* Python
+* File Parsing
