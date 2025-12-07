@@ -7,14 +7,36 @@ import { tsParticles } from "@tsparticles/engine";
 import { loadBasic } from "@tsparticles/basic";
 
 export default function Home() {
-    useEffect(initParticles, []);
+    useEffect(() => {
+        initParticlesEngine(async engine => await loadBasic(engine))
+    }, []);
+    console.log(getComputedStyle(document.documentElement)
+        .getPropertyValue("--particle-color"))
     return (
         <Layout
             title="Ishan Karmakar"
             description="Systems Programmer • OS Developer • Rust & C++"
+            noFooter
         >
             <main className={styles.main}>
-                <Particles />
+                <Particles options={{
+                    particles: {
+                        number: {
+                            value: 100,
+                        },
+                        color: {
+                            value: getComputedStyle(document.documentElement).getPropertyValue("--particle-color")
+                        },
+                        move: {
+                            enable: true,
+                            speed: 0.6,
+                        },
+                        opacity: {
+                            value: 0.40
+                        },
+                    },
+                    detectRetina: false,
+                }} />
                 {/* HERO SECTION */}
                 <section className={styles.hero}>
                     <h1 className={styles.title}>Ishan Karmakar</h1>
@@ -73,31 +95,4 @@ function ProjectCard({ title, description, link }) {
             </Link>
         </div>
     );
-}
-
-function initParticles() {
-    initParticlesEngine(async engine => {
-        await loadBasic(engine)
-
-        tsParticles.load({
-            options: {
-                particles: {
-                    number: {
-                        value: 100,
-                    },
-                    color: {
-                        value: "#FFFFFF",
-                    },
-                    move: {
-                        enable: true,
-                        speed: 0.6,
-                    },
-                    opacity: {
-                        value: 0.20
-                    },
-                },
-                detectRetina: false,
-            }
-        })
-    });
 }
