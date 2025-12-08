@@ -5,21 +5,10 @@ import styles from "./index.module.css";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadBasic } from "@tsparticles/basic";
 import { ISourceOptions } from "@tsparticles/engine";
+import { Card, CardHeader, CardBody, CardFooter } from "../components/Card";
 
 function particleColor(): string {
     return document.documentElement.getAttribute("data-theme") === "dark" ? "#FFFFFF" : "#000000";
-}
-
-function ProjectCard({ title, description, link }) {
-    return (
-        <div className={styles.card}>
-            <h3>{title}</h3>
-            <p>{description}</p>
-            <Link className="button button--sm button--primary" to={link}>
-                View Project →
-            </Link>
-        </div>
-    );
 }
 
 export default function Home() {
@@ -58,47 +47,59 @@ export default function Home() {
         return () => observer.disconnect()
     }, []);
     return (
-        <Layout
-            title="Ishan Karmakar"
-            description="Systems Programmer • OS Developer • Rust & C++"
-            noFooter
-        >
-            <main className={styles.main}>
-                <Particles options={particleOptions} />
-                {/* HERO SECTION */}
-                <section className={styles.hero}>
-                    <h1 className={styles.title}>Ishan Karmakar</h1>
-                    <p className={styles.subtitle}>
-                        Systems Programmer • OS Developer • Rust & C++ Enthusiast
-                    </p>
-                    <div className={styles.buttons}>
-                        <Link className="button button--primary" to="/projects/pivot-os">
-                            View Projects
-                        </Link>
-                        <Link className="button button--secondary" to="/about">
-                            About Me
-                        </Link>
-                        <a
-                            className="button button--secondary"
-                            href="https://github.com/ishan-karmakar"
-                        >
-                            GitHub
-                        </a>
+        <div className="home">
+            <Layout
+                title="Ishan Karmakar"
+                description="Systems Programmer • OS Developer • Rust & C++"
+                noFooter
+            >
+                <Particles options={particleOptions} style={{ zIndex: 0 }} />
+                <div style={{
+                    position: "relative",
+                    zIndex: 1,
+                    minHeight: "100vh",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                }}>
+                    <div style={{ textAlign: "center" }}>
+                        <h1 style={{ fontSize: "4rem", fontWeight: 800, marginBottom: "0.5rem" }}>Ishan Karmakar</h1>
+                        <p style={{ fontSize: "1.25rem", opacity: "0.8" }}>
+                            Systems Programmer • OS Developer • Rust & C++ Enthusiast
+                        </p>
                     </div>
-                </section>
 
-                {/* FEATURED PROJECTS */}
-                <section className={styles.section}>
-                    <h2 className={styles.sectionTitle}>Featured Projects</h2>
                     <div className={styles.cardGrid}>
-                        <ProjectCard
-                            title="PivotOS Kernel"
-                            description="A custom monolithic kernel with paging, interrupt handling, and memory management."
-                            link="/projects/pivot-os"
-                        />
+                        <Card style={{ maxWidth: "250px", paddingBottom: "10px" }}>
+                            <CardHeader><h2>Projects</h2></CardHeader>
+                            <CardBody>Kernel development, networking tools, and low-level systems work</CardBody>
+                            <CardFooter style={{ justifyItems: "center" }}>
+                                <Link to="/projects/pivot-os">
+                                    <button style={{ maxWidth: "175px" }} className="button button--secondary" >View Projects &#8594;</button>
+                                </Link>
+                            </CardFooter>
+                        </Card>
+                        <Card style={{ maxWidth: "250px", paddingBottom: "10px" }}>
+                            <CardHeader><h2>Experience</h2></CardHeader>
+                            <CardBody>Roles, internships, and open-source contributions</CardBody>
+                            <CardFooter style={{ justifyItems: "center" }}>
+                                <Link to="/experience/community-service">
+                                    <button style={{ maxWidth: "175px" }} className="button button--secondary" >View Experience &#8594;</button>
+                                </Link>
+                            </CardFooter>
+                        </Card>
+                        <Card style={{ maxWidth: "250px", paddingBottom: "10px" }}>
+                            <CardHeader><h2>Certifications</h2></CardHeader>
+                            <CardBody>Technical certifications and formal qualifications</CardBody>
+                            <CardFooter style={{ justifyItems: "center" }}>
+                                <Link to="/projects/pivot-os">
+                                    <button style={{ maxWidth: "175px" }} className="button button--secondary" >View Certifications &#8594;</button>
+                                </Link>
+                            </CardFooter>
+                        </Card>
                     </div>
-                </section>
-            </main>
-        </Layout>
+                </div>
+            </Layout>
+        </div>
     );
 }
