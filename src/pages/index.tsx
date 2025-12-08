@@ -4,6 +4,7 @@ import Link from "@docusaurus/Link";
 import styles from "./index.module.css";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadBasic } from "@tsparticles/basic";
+import { ISourceOptions } from "@tsparticles/engine";
 
 function particleColor(): string {
     return document.documentElement.getAttribute("data-theme") === "dark" ? "#FFFFFF" : "#000000";
@@ -22,26 +23,27 @@ function ProjectCard({ title, description, link }) {
 }
 
 export default function Home() {
-    const [particleOptions, setParticleOptions] = useState({
-        particles: {
-            number: {
-                value: 100,
-            },
-            color: {
-                value: particleColor()
-            },
-            move: {
-                enable: true,
-                speed: 0.6,
-            },
-            opacity: {
-                value: 0.40
-            },
-        },
-        detectRetina: false,
-    });
+    const [particleOptions, setParticleOptions] = useState<ISourceOptions>({});
     useEffect(() => {
         initParticlesEngine(async engine => await loadBasic(engine))
+        setParticleOptions({
+            particles: {
+                number: {
+                    value: 100,
+                },
+                color: {
+                    value: particleColor()
+                },
+                move: {
+                    enable: true,
+                    speed: 0.6,
+                },
+                opacity: {
+                    value: 0.40
+                },
+            },
+            detectRetina: false,
+        });
         const observer = new MutationObserver(() => setParticleOptions(prev => ({
             ...prev,
             particles: {
@@ -70,7 +72,7 @@ export default function Home() {
                         Systems Programmer • OS Developer • Rust & C++ Enthusiast
                     </p>
                     <div className={styles.buttons}>
-                        <Link className="button button--primary" to="/projects">
+                        <Link className="button button--primary" to="/projects/pivot-os">
                             View Projects
                         </Link>
                         <Link className="button button--secondary" to="/about">
@@ -93,16 +95,6 @@ export default function Home() {
                             title="PivotOS Kernel"
                             description="A custom monolithic kernel with paging, interrupt handling, and memory management."
                             link="/projects/pivot-os"
-                        />
-                        <ProjectCard
-                            title="WireGuard Over HTTPS"
-                            description="A cloaked VPN tunnel for iOS using WireGuard encapsulated in HTTPS."
-                            link="/projects/wireguard-https"
-                        />
-                        <ProjectCard
-                            title="Memory Manager"
-                            description="Virtual memory subsystem with paging, heap allocator, and fault handling."
-                            link="/projects/memory-manager"
                         />
                     </div>
                 </section>
