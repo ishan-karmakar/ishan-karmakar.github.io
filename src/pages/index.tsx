@@ -1,17 +1,60 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import styles from "./index.module.css";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { tsParticles } from "@tsparticles/engine";
 import { loadBasic } from "@tsparticles/basic";
 
+function particleColor(): string {
+    return document.documentElement.getAttribute("data-theme") === "dark" ? "#FFFFFF" : "#000000";
+}
+
+function ProjectCard({ title, description, link }) {
+    return (
+        <div className={styles.card}>
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <Link className="button button--sm button--primary" to={link}>
+                View Project →
+            </Link>
+        </div>
+    );
+}
+
 export default function Home() {
+    const [particleOptions, setParticleOptions] = useState({
+        particles: {
+            number: {
+                value: 100,
+            },
+            color: {
+                value: particleColor()
+            },
+            move: {
+                enable: true,
+                speed: 0.6,
+            },
+            opacity: {
+                value: 0.40
+            },
+        },
+        detectRetina: false,
+    });
     useEffect(() => {
         initParticlesEngine(async engine => await loadBasic(engine))
+        const observer = new MutationObserver(() => setParticleOptions(prev => ({
+            ...prev,
+            particles: {
+                ...prev.particles,
+                color: { value: particleColor() }
+            }
+        })))
+        observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ['data-theme']
+        })
+        return () => observer.disconnect()
     }, []);
-    console.log(getComputedStyle(document.documentElement)
-        .getPropertyValue("--particle-color"))
     return (
         <Layout
             title="Ishan Karmakar"
@@ -19,24 +62,7 @@ export default function Home() {
             noFooter
         >
             <main className={styles.main}>
-                <Particles options={{
-                    particles: {
-                        number: {
-                            value: 100,
-                        },
-                        color: {
-                            value: getComputedStyle(document.documentElement).getPropertyValue("--particle-color")
-                        },
-                        move: {
-                            enable: true,
-                            speed: 0.6,
-                        },
-                        opacity: {
-                            value: 0.40
-                        },
-                    },
-                    detectRetina: false,
-                }} />
+                <Particles options={particleOptions} />
                 {/* HERO SECTION */}
                 <section className={styles.hero}>
                     <h1 className={styles.title}>Ishan Karmakar</h1>
@@ -82,17 +108,5 @@ export default function Home() {
                 </section>
             </main>
         </Layout>
-    );
-}
-
-function ProjectCard({ title, description, link }) {
-    return (
-        <div className={styles.card}>
-            <h3>{title}</h3>
-            <p>{description}</p>
-            <Link className="button button--sm button--primary" to={link}>
-                View Project →
-            </Link>
-        </div>
     );
 }

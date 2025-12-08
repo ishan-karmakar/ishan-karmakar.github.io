@@ -53,11 +53,3 @@
 .card h3 {
   margin-top: 0;
 }
-
-:root {
-  --particle-color: #000000;
-}
-
-:root[data-theme='dark'] {
-  --particle-color: #ffffff;
-}
