@@ -4,7 +4,7 @@ import Link from "@docusaurus/Link";
 import styles from "./index.module.css";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadBasic } from "@tsparticles/basic";
-import { ISourceOptions } from "@tsparticles/engine";
+import { ISourceOptions, tsParticles } from "@tsparticles/engine";
 import { Card, CardHeader, CardBody, CardFooter } from "../components/Card";
 
 function particleColor(): string {
@@ -12,39 +12,30 @@ function particleColor(): string {
 }
 
 export default function Home() {
-    const [particleOptions, setParticleOptions] = useState<ISourceOptions>({});
     useEffect(() => {
-        initParticlesEngine(async engine => await loadBasic(engine))
-        setParticleOptions({
-            particles: {
-                number: {
-                    value: 100,
-                },
-                color: {
-                    value: particleColor()
-                },
-                move: {
-                    enable: true,
-                    speed: 0.6,
-                },
-                opacity: {
-                    value: 0.80
-                },
-            },
-            detectRetina: false,
-        });
-        const observer = new MutationObserver(() => setParticleOptions(prev => ({
-            ...prev,
-            particles: {
-                ...prev.particles,
-                color: { value: particleColor() }
-            }
-        })))
-        observer.observe(document.documentElement, {
-            attributes: true,
-            attributeFilter: ['data-theme']
+        initParticlesEngine(async engine => {
+            await loadBasic(engine);
+            tsParticles.load({
+                options: {
+                    particles: {
+                        number: {
+                            value: 100,
+                        },
+                        color: {
+                            value: particleColor()
+                        },
+                        move: {
+                            enable: true,
+                            speed: 0.6,
+                        },
+                        opacity: {
+                            value: 0.80
+                        },
+                    },
+                    detectRetina: false,
+                }
+            })
         })
-        return () => observer.disconnect()
     }, []);
     return (
         <div className="home">
@@ -53,7 +44,7 @@ export default function Home() {
                 description="Systems Programmer • OS Developer • Rust & C++"
                 noFooter
             >
-                <Particles options={particleOptions} style={{ zIndex: 0 }} />
+                <Particles style={{ zIndex: 0 }} />
                 <div style={{
                     position: "relative",
                     zIndex: 1,
