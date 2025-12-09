@@ -51,30 +51,30 @@ export default function Home() {
                     </div>
 
                     <div className={styles.cardGrid}>
-                        <Card style={{ maxWidth: "250px", paddingBottom: "10px" }}>
+                        <Card>
                             <CardHeader><h2>Projects</h2></CardHeader>
                             <CardBody>Kernel development, networking tools, and low-level systems work</CardBody>
-                            <CardFooter style={{ justifyItems: "center" }}>
+                            <CardFooter>
                                 <Link to="/projects/pivot-os">
-                                    <button style={{ maxWidth: "175px" }} className="button button--secondary" >View Projects &#8594;</button>
+                                    <button className="button button--secondary">View Projects &#8594;</button>
                                 </Link>
                             </CardFooter>
                         </Card>
-                        <Card style={{ maxWidth: "250px", paddingBottom: "10px" }}>
+                        <Card>
                             <CardHeader><h2>Experience</h2></CardHeader>
                             <CardBody>Roles, internships, and open-source contributions</CardBody>
-                            <CardFooter style={{ justifyItems: "center" }}>
+                            <CardFooter>
                                 <Link to="/experience/community-service">
-                                    <button style={{ maxWidth: "175px" }} className="button button--secondary" >View Experience &#8594;</button>
+                                    <button className="button button--secondary">View Experience &#8594;</button>
                                 </Link>
                             </CardFooter>
                         </Card>
-                        <Card style={{ maxWidth: "250px", paddingBottom: "10px" }}>
+                        <Card>
                             <CardHeader><h2>Certifications</h2></CardHeader>
                             <CardBody>Technical certifications and formal qualifications</CardBody>
-                            <CardFooter style={{ justifyItems: "center" }}>
+                            <CardFooter>
                                 <Link to="/certs">
-                                    <button style={{ maxWidth: "175px" }} className="button button--secondary" >View Certifications &#8594;</button>
+                                    <button className="button button--secondary">View Certifications &#8594;</button>
                                 </Link>
                             </CardFooter>
                         </Card>
