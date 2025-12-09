@@ -1,28 +1,29 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import styles from "./index.module.css";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadBasic } from "@tsparticles/basic";
-import { ISourceOptions, tsParticles } from "@tsparticles/engine";
 import { Card, CardHeader, CardBody, CardFooter } from "../components/Card";
-
-function particleColor(): string {
-    return document.documentElement.getAttribute("data-theme") === "dark" ? "#FFFFFF" : "#000000";
-}
 
 export default function Home() {
     useEffect(() => {
-        initParticlesEngine(async engine => {
-            await loadBasic(engine);
-            tsParticles.load({
-                options: {
+        initParticlesEngine(async engine => await loadBasic(engine))
+    }, []);
+    return (
+        <div className="home">
+            <Layout
+                title="Ishan Karmakar"
+                description="Systems Programmer • OS Developer • Rust & C++"
+                noFooter
+            >
+                <Particles style={{ zIndex: 0 }} options={{
                     particles: {
                         number: {
                             value: 100,
                         },
                         color: {
-                            value: particleColor()
+                            value: "#FFFFFF"
                         },
                         move: {
                             enable: true,
@@ -33,18 +34,7 @@ export default function Home() {
                         },
                     },
                     detectRetina: false,
-                }
-            })
-        })
-    }, []);
-    return (
-        <div className="home">
-            <Layout
-                title="Ishan Karmakar"
-                description="Systems Programmer • OS Developer • Rust & C++"
-                noFooter
-            >
-                <Particles style={{ zIndex: 0 }} />
+                }} />
                 <div style={{
                     position: "relative",
                     zIndex: 1,
