@@ -1,55 +1,7 @@
-.main {
-  padding: 2rem 1rem;
-}
-
-.hero {
-  text-align: center;
-  padding: 6rem 1rem 4rem;
-}
-
-.title {
-  font-size: 4rem;
-  font-weight: 800;
-  margin-bottom: 0.5rem;
-}
-
-.subtitle {
-  font-size: 1.25rem;
-  opacity: 0.8;
-}
-
-.buttons {
-  margin-top: 2rem;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.section {
-  margin-top: 4rem;
-  text-align: center;
-}
-
-.sectionTitle {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-}
-
 .cardGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, 250px);
   gap: 1.5rem;
-  padding: 0 1rem;
-}
-
-.card {
-  background: var(--ifm-card-background-color);
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  text-align: left;
-}
-
-.card h3 {
-  margin-top: 0;
+  text-align: center;
+  justify-content: center;
 }

@@ -23,6 +23,9 @@ const config: Config = {
     docs: {
       routeBasePath: '/',
       sidebarPath: './sidebars.ts'
+    },
+    theme: {
+      customCss: ['src/global.css']
     }
   }]],
   themeConfig: {
