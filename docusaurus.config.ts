@@ -19,6 +19,7 @@ const config: Config = {
   organizationName: 'ishan-karmakar', // Usually your GitHub org/user name.
   projectName: 'ishan-karmakar.github.io', // Usually your repo name.
   onBrokenLinks: 'throw',
+  favicon: "img/profile.png",
   presets: [['classic', {
     docs: {
       routeBasePath: '/',
@@ -37,7 +38,7 @@ const config: Config = {
       title: 'Ishan',
       logo: {
         alt: 'My Logo',
-        src: 'img/profile.svg'
+        src: 'img/profile.png'
       },
       items: [
         {to: '/projects/pivot-os', label: 'Projects'},
