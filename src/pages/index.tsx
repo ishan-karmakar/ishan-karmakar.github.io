@@ -28,7 +28,7 @@ export default function Home() {
                     speed: 0.6,
                 },
                 opacity: {
-                    value: 0.40
+                    value: 0.80
                 },
             },
             detectRetina: false,
@@ -92,7 +92,7 @@ export default function Home() {
                             <CardHeader><h2>Certifications</h2></CardHeader>
                             <CardBody>Technical certifications and formal qualifications</CardBody>
                             <CardFooter style={{ justifyItems: "center" }}>
-                                <Link to="/projects/pivot-os">
+                                <Link to="/certs">
                                     <button style={{ maxWidth: "175px" }} className="button button--secondary" >View Certifications &#8594;</button>
                                 </Link>
                             </CardFooter>
