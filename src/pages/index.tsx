@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
-import styles from "./index.module.css";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadBasic } from "@tsparticles/basic";
 import { Card, CardHeader, CardBody, CardFooter } from "../components/Card";
@@ -13,7 +12,6 @@ export default function Home() {
     return (
         <div className="home">
             <Layout
-                title="Ishan Karmakar"
                 description="Systems Programmer • OS Developer • Rust & C++"
                 noFooter
             >
@@ -50,12 +48,12 @@ export default function Home() {
                         </p>
                     </div>
 
-                    <div className={styles.cardGrid}>
+                    <div className="card-grid">
                         <Card>
                             <CardHeader><h2>Projects</h2></CardHeader>
                             <CardBody>Kernel development, networking tools, and low-level systems work</CardBody>
                             <CardFooter>
-                                <Link to="/projects/pivot-os">
+                                <Link to="/projects">
                                     <button className="button button--secondary">View Projects &#8594;</button>
                                 </Link>
                             </CardFooter>
