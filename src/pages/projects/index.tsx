@@ -1,5 +1,5 @@
 import Link from "@docusaurus/Link";
-import { Card, CardHeader } from "@site/src/components/Card";
+import { Card, CardHeader, CardImage } from "@site/src/components/Card";
 import Layout from "@theme/Layout";
 
 export default function () {
@@ -33,6 +33,9 @@ export default function () {
 
 function Project(props: { title: string, to: string }) {
     return <Link to={"/projects/" + props.to}>
-        <Card><CardHeader><h2>{props.title}</h2></CardHeader></Card>
+        <Card style={{ alignItems: "center" }}>
+            <CardHeader><h2>{props.title}</h2></CardHeader>
+            <CardImage src={`/img/projects/${props.to}.png`} alt={props.title} />
+        </Card>
     </Link>
 }
