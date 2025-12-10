@@ -4,6 +4,7 @@
 
 .card {
   transition: transform 0.3s ease;
+  padding-bottom: 10px;
 }
 
 .card:hover {
