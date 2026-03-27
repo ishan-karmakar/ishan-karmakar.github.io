@@ -21,3 +21,7 @@ export function CardBody(props: Props) {
 export function CardFooter(props: Props) {
     return <div className="card__footer" style={props.style}>{props.children}</div>
 }
+
+export function CardImage(props: {style?: CSSProperties, src: string, alt?: string}) {
+    return <img className="card__image" style={props.style} src={props.src} alt={props.alt} />
+}
