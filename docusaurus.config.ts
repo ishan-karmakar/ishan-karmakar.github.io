@@ -62,6 +62,10 @@ const config: Config = {
       copyright: `© ${new Date().getFullYear()} Ishan Karmakar`,
     },
   },
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
 };
 
 export default config;
