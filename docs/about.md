@@ -36,10 +36,14 @@ My name is Ishan Karmakar and I am a 10th grader at Vandegrift High School. I am
 * **Network Engineering** - Extremely passionate about networking, network architecture, and hands-on wiring
 
 ## Scores
-* **Weighted GPA**: 5.51/6
+* **Weighted GPA**: 5.49/6
 * **Unweighted GPA**: 4.0/4
-* **Rank**: 6/615
-* **PSAT**: 1480/1520 (*99% percentile*)
+* **Rank**: 8/610
+* **PSAT**: 1490/1520 (*99% percentile*)
 * **AP Scores**:
     * **AP Precalculus**: 5
     * **AP Human Geography**: 5
+    * **AP Physics 1**: 5
+    * **AP Calculus AB**: 5
+    * **AP World History**: 5
+    * **AP Computer Science A**: 5
