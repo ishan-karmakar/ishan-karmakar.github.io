@@ -1,16 +1,13 @@
-import { useEffect } from "react";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import styles from "./index.module.css";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
+import Particles, { ParticlesProvider } from "@tsparticles/react";
 import { loadBasic } from "@tsparticles/basic";
 import { Card, CardHeader, CardBody, CardFooter } from "../components/Card";
 
 export default function Home() {
-    useEffect(() => {
-        initParticlesEngine(async engine => await loadBasic(engine))
-    }, []);
-    return (
+    const particlesInit = async engine => await loadBasic(engine);
+    return <ParticlesProvider init={particlesInit}>
         <div className="home">
             <Layout
                 title="Ishan Karmakar"
@@ -82,5 +79,5 @@ export default function Home() {
                 </div>
             </Layout>
         </div>
-    );
+    </ParticlesProvider>
 }
