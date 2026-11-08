@@ -1,6 +1,20 @@
 # About Me
 My name is Ishan Karmakar and I am a 10th grader at Vandegrift High School. I am an aspiring network engineer, backend developer, and systems developer interested in building applications and infrastructure with hands-on programming.
 
+## Scores
+* **Weighted GPA**: 5.49/6
+* **Unweighted GPA**: 4.0/4
+* **Rank**: 8/610
+* **SAT**: 1570/1600 (*99% percentile*)
+* **PSAT**: 1490/1520 (*99% percentile*)
+* **AP Scores**:
+    * **AP Precalculus**: 5
+    * **AP Human Geography**: 5
+    * **AP Physics 1**: 5
+    * **AP Calculus AB**: 5
+    * **AP World History**: 5
+    * **AP Computer Science A**: 5
+
 ## Skills
 * **Programming Languages**
     * **C (3 years)** - Extensive experience with systems programming, operating systems, and embedded systems programming
@@ -34,16 +48,3 @@ My name is Ishan Karmakar and I am a 10th grader at Vandegrift High School. I am
 * **Electrical** - Interested in electrical engineering and wiring robots. Helped out with electrical on FTC and FRC teams.
 * **Systems Programming** - Interested in operating systems, embedded systems, and low level programming
 * **Network Engineering** - Extremely passionate about networking, network architecture, and hands-on wiring
-
-## Scores
-* **Weighted GPA**: 5.49/6
-* **Unweighted GPA**: 4.0/4
-* **Rank**: 8/610
-* **PSAT**: 1490/1520 (*99% percentile*)
-* **AP Scores**:
-    * **AP Precalculus**: 5
-    * **AP Human Geography**: 5
-    * **AP Physics 1**: 5
-    * **AP Calculus AB**: 5
-    * **AP World History**: 5
-    * **AP Computer Science A**: 5
